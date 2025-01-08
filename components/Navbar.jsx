@@ -10,11 +10,10 @@ export default function Navbar() {
   const [openDropdowns, setOpenDropdowns] = useState([]);
 
   const toggleDropdown = (chapter) => {
-    setOpenDropdowns(
-      (prev) =>
-        prev.includes(chapter)
-          ? prev.filter((c) => c !== chapter) 
-          : [...prev, chapter] 
+    setOpenDropdowns((prev) =>
+      prev.includes(chapter)
+        ? prev.filter((c) => c !== chapter)
+        : [...prev, chapter]
     );
   };
 
@@ -37,9 +36,9 @@ export default function Navbar() {
             edu's threejs journey
           </Link>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col">
           {links.map((chapter, index) => (
-            <div key={index}>
+            <div key={index} className="flex flex-col">
               <button
                 className={`w-full text-left hover:underline ${
                   openDropdowns.includes(chapter.title) ? "font-bold" : ""
@@ -50,9 +49,9 @@ export default function Navbar() {
               </button>
 
               <div
-                className={`ml-4 mt-2 space-y-2 transition-all duration-300 overflow-hidden ${
+                className={`ml-4 mt-2 mb-4 flex flex-col gap-2 transition-all duration-500   ${
                   openDropdowns.includes(chapter.title)
-                    ? "max-h-40 opacity-100"
+                    ? "max-h-[30rem] opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
