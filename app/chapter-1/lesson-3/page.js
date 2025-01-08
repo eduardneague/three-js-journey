@@ -21,13 +21,7 @@ export default function Page1() {
 
     const renderer = new THREE.WebGLRenderer({ canvas });
     renderer.setSize(sizes.width, sizes.height);
-
-    const animate = () => {
-      renderer.render(scene, camera);
-      requestAnimationFrame(animate);
-    };
-
-    animate();
+    renderer.render(scene, camera);
 
     return () => {
       renderer.dispose();
@@ -38,7 +32,7 @@ export default function Page1() {
 
   return (
     <main className="pt-[2rem]">
-      <h1 className="text-2xl font-bold">First Project</h1>
+      <h1 className="text-2xl font-bold">First ThreeJS Project</h1>
       <p>Chapter 1 - Lesson 3</p>
       <canvas
         ref={canvasRef}

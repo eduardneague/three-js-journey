@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 
-// Import the links array
 import { links } from "@/links";
 import Image from "next/image";
 
@@ -14,8 +13,8 @@ export default function Navbar() {
     setOpenDropdowns(
       (prev) =>
         prev.includes(chapter)
-          ? prev.filter((c) => c !== chapter) // Close if already open
-          : [...prev, chapter] // Open if not already open
+          ? prev.filter((c) => c !== chapter) 
+          : [...prev, chapter] 
     );
   };
 
