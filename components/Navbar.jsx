@@ -32,6 +32,7 @@ export default function Navbar() {
             draggable={false}
             className="select-none"
             src={"/three.png"}
+            alt="three-js-logo"
           />
           <Link href="/" className="text-white font-bold">
             edu's threejs journey
