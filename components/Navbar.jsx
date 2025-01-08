@@ -7,14 +7,10 @@ import { links } from "@/links";
 import Image from "next/image";
 
 export default function Navbar() {
-  const [openDropdowns, setOpenDropdowns] = useState([]);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleDropdown = (chapter) => {
-    setOpenDropdowns((prev) =>
-      prev.includes(chapter)
-        ? prev.filter((c) => c !== chapter)
-        : [...prev, chapter]
-    );
+    setOpenDropdown((prev) => (prev === chapter ? null : chapter));
   };
 
   return (
@@ -41,7 +37,7 @@ export default function Navbar() {
             <div key={index} className="flex flex-col">
               <button
                 className={`w-full text-left hover:underline ${
-                  openDropdowns.includes(chapter.title) ? "font-bold" : ""
+                  openDropdown === chapter.title ? "font-bold" : ""
                 }`}
                 onClick={() => toggleDropdown(chapter.title)}
               >
@@ -49,10 +45,10 @@ export default function Navbar() {
               </button>
 
               <div
-                className={`ml-4 mt-2 mb-4 flex flex-col gap-2 transition-all duration-500   ${
-                  openDropdowns.includes(chapter.title)
-                    ? "max-h-[30rem] opacity-100"
-                    : "max-h-0 opacity-0"
+                className={`ml-4 mt-2 mb-4 flex flex-col gap-2 transition-all duration-500 overflow-hidden ${
+                  openDropdown === chapter.title
+                    ? "max-h-[30rem] opacity-100 pointer-events-auto"
+                    : "max-h-0 opacity-0 pointer-events-none"
                 }`}
               >
                 {chapter.links.map((lesson, lessonIndex) => (

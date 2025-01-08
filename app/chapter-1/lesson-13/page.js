@@ -19,7 +19,7 @@ export default function Page1() {
 
   return (
     <main className="pt-[2rem]">
-      <h1 className="text-2xl font-bold">Animations</h1>
+      <h1 className="text-2xl font-bold">Go live</h1>
       <p>Chapter 1 - Lesson 5</p>
       <canvas
         ref={canvasRef}
