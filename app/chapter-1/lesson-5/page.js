@@ -64,7 +64,6 @@ export default function Page1() {
 
     const tick = () => {
       const elapsedTime = clock.getElapsedTime();
-      console.log(elapsedTime);
 
       mesh.rotation.x = elapsedTime;
       mesh.rotation.y = elapsedTime;
