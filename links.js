@@ -42,10 +42,6 @@ export const links = [
         title: "12. 3D Text",
         link: "chapter-1/lesson-12",
       },
-      {
-        title: "13. Go live",
-        link: "chapter-1/lesson-13",
-      },
     ],
   },
   {
